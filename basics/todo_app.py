@@ -4,13 +4,17 @@ todos = []
 resp = ""
 while resp != "exit":
     resp = input("Type add, edit, show or exit: ")
+    resp = resp.lower()
     match resp:
         case "add":
             todo = input("Insert a task: ")
             todos.append(todo)
         case "show":
-            for i in todos:
-                print(i)
+            if len(todos) > 0:
+                for i in todos:
+                    print(i)
+            else:
+                print("Task list is empty")
         case "edit":
             if len(todos) > 0:
                 print("ID - TASK")
@@ -21,4 +25,6 @@ while resp != "exit":
                 todos[task_id] = new_task
             else:
                 print("Task list is empty")
+        case default:
+            print("Invalid option")
             
