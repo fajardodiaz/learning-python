@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 user_prompt = "Enter a todo: "
 
 i = 0
